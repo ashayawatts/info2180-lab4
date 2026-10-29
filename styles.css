@@ -1,16 +1,173 @@
 
+
+/* Reset and page defaults */
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-    background-color: #f4f4f4;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
 }
 
-h1 {
-    color: #333333;
+/* Header */
+header {
+    background: linear-gradient(135deg, #0f172a, #1d4ed8);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
 }
 
+header h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 8px 0 0;
+    color: #dbeafe;
+}
+
+/* Main content */
+main {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto;
+}
+
+/* Search panel */
+#search-form,
+#search-container,
+.search-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="search"] {
+    width: 100%;
+    padding: 13px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f8fafc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Search button */
 button {
-    padding: 10px 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* Superhero result area */
+#result {
+    margin-top: 25px;
+    padding: 28px;
+    background-color: white;
+    border-radius: 12px;
+    border-left: 5px solid #2563eb;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+    overflow-wrap: anywhere;
+}
+
+/* Hero alias */
+#result h3 {
+    margin: 0 0 5px;
+    color: #1d4ed8;
+    font-size: 1.8rem;
+}
+
+/* Hero's real name */
+#result h4 {
+    margin: 0 0 18px;
+    color: #64748b;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+/* Biography */
+#result p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #334155;
+}
+
+/* Messages, such as a missing superhero */
+#result:empty {
+    display: none;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) {
+    header {
+        padding: 28px 15px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    main {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    #search-form,
+    #search-container,
+    .search-container,
+    #result {
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+    }
 }
 
